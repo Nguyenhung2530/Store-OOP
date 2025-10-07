@@ -26,7 +26,17 @@ public class Order {
 
     public void checkout() {
         double total = calculateTotal();
-        System.out.println("Khách hàng: " + customerName + ". Tổng tiền: " + total + " VND.");
+        System.out.println("Khách hàng: " + customerName);
+        System.out.println("Danh sách sản phẩm đã mua:");
+
+        for (OrderItem item : items) {
+            System.out.println("- " + item.getProduct().getProductName() +
+                    " | SL: " + item.getQuantity() +
+                    " | Giá: " + item.getProduct().getPrice() +
+                    " | Thành tiền: " + item.getSubtotal());
+        }
+
+        System.out.println("Tổng tiền: " + total + " VNĐ");
         paymentMethod.pay(total);
     }
 }
