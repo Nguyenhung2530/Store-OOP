@@ -15,9 +15,6 @@ public class Main {
         productManager.addProduct(new FoodProduct("F001", "Bánh quy bơ", 50000, 20, "Food", new Date(), "Việt Nam", 0.5));
         productManager.addProduct(new FoodProduct("F002", "Sữa tươi Vinamilk", 32000, 50, "Food", new Date(), "Việt Nam", 1.0));
 
-        System.out.println("===== DANH SÁCH SẢN PHẨM =====");
-        productManager.listProducts();
-
         PaymentMethod momo = new MomoPayment("0909123456");
         Order order = new Order("Nguyễn Văn A", momo);
         order.addItem(productManager.findProductById("E001"), 1);
